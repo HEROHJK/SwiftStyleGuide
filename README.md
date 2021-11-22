@@ -27,6 +27,7 @@ github [StyleShare](https://github.com/StyleShare/swift-style-guide) 가이드�
   - [타입](#타입)
   - [주석](#주석)
 - [프로그래밍 권장사항](#프로그래밍-권장사항)
+- [SwiftLint 사용 가이드](#SwiftLint-사용-가이드)
 
 
 # StyleGuide용 라이브러리
@@ -291,3 +292,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDataSo
     // ...
 }
 ```
+
+# SwiftLint 사용 가이드
+https://raw.githubusercontent.com/HEROHJK/SwiftStyleGuide/master/lint.yml
+* [SwiftLint](https://github.com/realm/SwiftLint)를 먼저 설치
+* xcode 프로젝트 스크립트에서, 아래 스크립트를 추가.
+```
+if which swiftlint >/dev/null; then
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+fi
+```
+* 프로젝트에 .swiftlint.yml 파일을 만든 후, 아래 코드 추가
+* `parent_config: https://raw.githubusercontent.com/HEROHJK/SwiftStyleGuide/master/lint.yml`
