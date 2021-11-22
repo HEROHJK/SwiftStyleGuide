@@ -294,10 +294,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDataSo
 ```
 
 # SwiftLint 사용 가이드
-https://raw.githubusercontent.com/HEROHJK/SwiftStyleGuide/master/lint.yml
 * [SwiftLint](https://github.com/realm/SwiftLint)를 먼저 설치
 * xcode 프로젝트 스크립트에서, 아래 스크립트를 추가.
-```
+```bash
 if which swiftlint >/dev/null; then
   swiftlint
 else
