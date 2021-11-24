@@ -147,6 +147,9 @@ disabled_rules: # 사용하지 않는 룰
     # 변수 선언에는 반드시 타입을 명시해야 합니다
     - explicit_type_interface
 
+    # 옵저버는 deinit에서 제거해야 합니다
+    - notification_center_detachment
+
 opt_in_rules: #사용하는 룰
     # 아규먼트들은 한줄에 있거나, 각각 따로 있어야 합니다
     - multiline_arguments
@@ -180,9 +183,6 @@ opt_in_rules: #사용하는 룰
 
     # 라인의 길이를 제한합니다
     - line_length
-
-    # 옵저버는 deinit에서 제거해야 합니다
-    - notification_center_detachment
 
     # 캡쳐링(익명함수 블럭)시, unowned보다는 weak를 선호합니다
     # 옵셔널에 의한 차이인데, 강제 옵셔널을 배제하기 위한 방법으로 추정됩니다.
