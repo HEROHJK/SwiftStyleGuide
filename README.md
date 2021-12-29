@@ -303,5 +303,20 @@ else
   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
 fi
 ```
+
+* M1의 경우
+```bash
+if test -d "/opt/homebrew/bin/"; then
+  PATH="/opt/homebrew/bin/:${PATH}"
+fi
+
+export PATH
+
+if which swiftlint >/dev/null; then
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+fi
+```
 * 프로젝트에 .swiftlint.yml 파일을 만든 후, 아래 코드 추가
 * `parent_config: https://raw.githubusercontent.com/HEROHJK/SwiftStyleGuide/master/lint.yml`
