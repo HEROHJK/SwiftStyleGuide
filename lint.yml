@@ -154,6 +154,11 @@ disabled_rules: # 사용하지 않는 룰
     # 매번 적절한 상황 판단이 필요합니다. 쓸모없는 warning만 올려주는 규칙 같습니다.
     - vertical_whitespace_opening_braces
     - vertical_whitespace_closing_braces
+    
+    # 수직으로는 여백이 2줄이상 생기면 안됩니다
+    # 위와 같은 이유로 disable 합니다
+    # 화면이 공란으로 보일 수준이 아니라면, 가독성과 관련 없어 보입니다.
+    - vertical_whitespace
 
 opt_in_rules: #사용하는 룰
     # 아규먼트들은 한줄에 있거나, 각각 따로 있어야 합니다
@@ -515,9 +520,6 @@ opt_in_rules: #사용하는 룰
 
     # 함수를 사용할때 인자들이 여러개일경우 세로로 같은줄에 있어야 합니다
     - vertical_parameter_alignment_on_call
-
-    # 수직으로는 여백이 2줄이상 생기면 안됩니다
-    - vertical_whitespac
 
     # () -> Void를 사용합니다
     - void_return
