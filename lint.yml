@@ -149,6 +149,11 @@ disabled_rules: # 사용하지 않는 룰
 
     # 옵저버는 deinit에서 제거해야 합니다
     - notification_center_detachment
+    
+    # 여닫는 괄호 위에 빈줄이 있으면 안됩니다
+    # 매번 적절한 상황 판단이 필요합니다. 쓸모없는 warning만 올려주는 규칙 같습니다.
+    - vertical_whitespace_opening_braces
+    - vertical_whitespace_closing_braces
 
 opt_in_rules: #사용하는 룰
     # 아규먼트들은 한줄에 있거나, 각각 따로 있어야 합니다
@@ -512,11 +517,7 @@ opt_in_rules: #사용하는 룰
     - vertical_parameter_alignment_on_call
 
     # 수직으로는 여백이 2줄이상 생기면 안됩니다
-    - vertical_whitespace
-
-    # 여닫는 괄호 위에 빈줄이 있으면 안됩니다
-    - vertical_whitespace_opening_braces
-    - vertical_whitespace_closing_braces
+    - vertical_whitespac
 
     # () -> Void를 사용합니다
     - void_return
