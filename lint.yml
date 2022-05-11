@@ -159,6 +159,14 @@ disabled_rules: # 사용하지 않는 룰
     # 위와 같은 이유로 disable 합니다
     # 화면이 공란으로 보일 수준이 아니라면, 가독성과 관련 없어 보입니다.
     - vertical_whitespace
+    
+    # 파일 이름은 파일안의 타입과 일치해야 합니다
+    # extension, util 같은 파일은 일치하지 않을 수 있습니다.
+    # 그럴때는 '// swiftlint:disable:this file_name' 커맨드를 이용합니다.
+    # https://github.com/realm/SwiftLint/issues/2277#issuecomment-441244874
+    # 여러번 사용하다 보니, Utility성 함수, 변수들을 정의할때마다 disable을 해줘야합니다.
+    # 파일 네이밍 보다, 위의 상황에 시간소모가 더해져 disable 합니다
+    - file_name
 
 opt_in_rules: #사용하는 룰
     # 아규먼트들은 한줄에 있거나, 각각 따로 있어야 합니다
@@ -532,13 +540,6 @@ opt_in_rules: #사용하는 룰
 
     # 비교 할 때 변수는 왼쪽, 상수는 오른쪽에 있어야 합니다
     - yoda_condition
-    
-    # 파일 이름은 파일안의 타입과 일치해야 합니다
-    # extension, util 같은 파일은 일치하지 않을 수 있습니다.
-    # 그럴때는 '// swiftlint:disable:this file_name' 커맨드를 이용합니다.
-    # https://github.com/realm/SwiftLint/issues/2277#issuecomment-441244874
-    - file_name
-
 
 line_length:
   warning: 100
