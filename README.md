@@ -3,7 +3,7 @@ Swift Style Guide
 
 github [StyleShare](https://github.com/StyleShare/swift-style-guide) 가이드를 기준으로 작성 됨.
 
-최종 수정일 : 2021-11-22
+최종 수정일 : 2022-05-18
 
 
 # 목차
@@ -45,7 +45,7 @@ github [StyleShare](https://github.com/StyleShare/swift-style-guide) 가이드�
 ### 최대 줄 길이
 
 * 한줄은 100자를 넘지 않도록 함.
-    * 원래 100자였는데.. 소형 모니터에서 왼쪽 브라우저를 연 상황에서 120자까지 표시되지 않음.
+    * 원래 120자였는데.. 소형 모니터에서 왼쪽 브라우저를 연 상황에서 120자까지 표시되지 않음.
     * Xcode의 **Preferences -> Text Editing -> Display**의 **Page guide at column** 에서 100으로 설정.
 
 ### 들여쓰기 및 띄어쓰기
@@ -130,7 +130,10 @@ override func menuButtonDidTap() {
 
 ## 네이밍
 ### 클래스 / 구조체
+* 약어는 네이밍의 가장 첫번째를 제외하고는, 대문자로 처리
+  * 변수명이 `id`같은 경우에만 소문자로 처리
 * 이름에는 UpperCamelCase를 사용.
+  * 약어는 예외로, 대문자 처리
 * 클래스 이름에 접두사를 붙이지 않음.
   * 파생형의 앞자리등의 접두사를 붙이지 않음.
 
@@ -139,6 +142,16 @@ override func menuButtonDidTap() {
 class ViewController: ActionViewController { }
 /// 나쁜 예
 class AViewController: ActionViewController { }
+
+/// 좋은 예
+let userID
+let id
+user.secondID = "test2"
+/// 나쁜 예
+let userId
+let iD
+user.secondId = "test2"
+user.secondid = "test2"
 ```
 
 ### 함수
